@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="x-apple-disable-message-reformatting" />
+<!--[if !mso]><!-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<![endif]-->
+<title>${emailTitle}</title>
+
+<!-- Marketo Variables -->
+<meta class="mktoString" id="emailTitle" mktoName="Email Title" default="Transporeon Email">
+<meta class="mktoString" id="linkLogo" mktoName="Logo Link" default="https://www.transporeon.com">
+<meta class="mktoString" id="linkButton" mktoName="Button Link" default="#">
+<meta class="mktoString" id="textButton" mktoName="Button Text" default="Learn More">
+<meta class="mktoString" id="posButton" mktoName="Button Position" default="center">
+<meta class="mktoColor" id="colorBgDefaultWhite" mktoName="Background Color" default="#ffffff">
+<meta class="mktoString" id="linkVideo" mktoName="Video Thumbnail Link" default="#">
+
+<!--[if gte mso 9]>
+<xml>
+  <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+
+<style type="text/css">
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+}
+
+a img {
+  border: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Preheader */
+.preheader {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  color: transparent;
+  height: 0;
+  width: 0;
+  mso-hide: all;
+}
+
+/* Seravek Web Regular */
+@font-face {
+  font-family: "SeravekWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebRegular.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebRegular.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebRegular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Seravek Web Bold */
+@font-face {
+  font-family: "SeravekWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBold.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBold.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Seravek Web Italic */
+@font-face {
+  font-family: "SeravekWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebItalic.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebItalic.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebItalic.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Seravek Web Bold Italic - FIXED: Corrected typo in woff URL */
+@font-face {
+  font-family: "SeravekWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBoldItalic.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBoldItalic.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/SeravekWebBoldItalic.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Elena Web Regular */
+@font-face {
+  font-family: "ElenaWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegular.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegular.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Elena Web Bold */
+@font-face {
+  font-family: "ElenaWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBold.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBold.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Elena Web Regular Italic - FIXED: Corrected typo in eot URL */
+@font-face {
+  font-family: "ElenaWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegularItalic.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegularItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegularItalic.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebRegularItalic.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Elena Web Bold Italic */
+@font-face {
+  font-family: "ElenaWeb";
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBoldItalic.eot");
+  src: url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBoldItalic.woff2")
+      format("woff2"),
+    url("https://engage.transporeon.com/rs/307-ROC-257/images/ElenaWebBoldItalic.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* FIXED: Replaced non-standard hyphen with standard hyphen in sans-serif */
+.fallback-calibri {
+  font-family: "SeravekWeb", Calibri, Carlito, "PT Sans", "Trebuchet MS", sans-serif;
+}
+
+.fallback-georgia {
+  font-family: "ElenaWeb", Georgia, "Times New Roman", Times, serif;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 596px) {
+  .deviceWidth {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .small-12 {
+    width: 100% !important;
+  }
+  
+  .large-12 {
+    width: 100% !important;
+  }
+  
+  .p-left44 {
+    padding-left: 20px !important;
+  }
+  
+  .p-right44 {
+    padding-right: 20px !important;
+  }
+  
+  .mobile-hide {
+    display: none !important;
+  }
+  
+  .mobile-show {
+    display: block !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-padding {
+    padding: 10px 20px !important;
+  }
+}
+</style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+<!-- FIXED: Added preheader text -->
+<span class="preheader" style="display: none !important; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0; mso-hide: all;">Your email preview text goes here - customize this for each campaign.</span>
+
+<!-- View in Browser -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f4f4f4">
+  <tr>
+    <td align="center" style="padding: 10px 0;">
+      <a href="{{system.viewAsWebpageLink}}" style="color: #666666; font-size: 11px; font-family: 'SeravekWeb', Calibri, Carlito, 'PT Sans', 'Trebuchet MS', sans-serif; text-decoration: underline;" class="fallback-calibri" target="_blank">View in browser</a>
+    </td>
+  </tr>
+</table>
+
+<!-- Main Email Container -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f4f4f4">
+  <tr>
+    <td align="center">
+      <div class="mktoContainer" id="mainContainer">
+      
+        <!-- Header/Logo Module -->
+        <table class="mktoModule" id="headerModule" mktoName="Header Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <!-- FIXED: Changed href="#" to href="${linkLogo}" and added alt text -->
+            <th style="padding: 10px 20px;" class="p-left44">
+              <a href="${linkLogo}">
+                <img src="https://engage.transporeon.com/rs/307-ROC-257/images/logo-gray.png" alt="Transporeon Logo" border="0" width="175" height="auto" style="display: block;" />
+              </a>
+            </th>
+          </tr>
+        </table>
+        
+        <!-- Hero Image Module -->
+        <table class="mktoModule" id="heroImageModule" mktoName="Hero Image Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <td align="center" style="padding: 0;">
+              <div class="mktoImg" id="heroImage" mktoName="Hero Image" mktoImgWidth="600">
+                <a href="#">
+                  <img src="https://engage.transporeon.com/rs/307-ROC-257/images/placeholder-hero.jpg" alt="Hero Image" border="0" width="600" style="display: block; width: 100%; max-width: 600px;" />
+                </a>
+              </div>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Salutation Module -->
+        <table class="mktoModule" id="salutationModule" mktoName="Salutation Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <td style="padding: 30px 44px 10px 44px;" class="p-left44 p-right44">
+              <p style="margin: 0; color: #333333; font-size: 16px; font-family: 'SeravekWeb', Calibri, Carlito, 'PT Sans', 'Trebuchet MS', sans-serif; font-weight: normal; line-height: 24px;" class="fallback-calibri">
+                {{my.Salutation EN:default=Dear Customer}},
+              </p>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Text Content Module -->
+        <table class="mktoModule" id="textModule" mktoName="Text Content Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <td style="padding: 10px 44px 20px 44px;" class="p-left44 p-right44">
+              <div class="mktoText" id="bodyText" mktoName="Body Text">
+                <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px; font-family: 'ElenaWeb', Georgia, 'Times New Roman', Times, serif; font-weight: normal; line-height: 26px;" class="fallback-georgia">
+                  Your email content goes here. This is editable text that can be customized in Marketo.
+                </p>
+                <p style="margin: 0; color: #333333; font-size: 16px; font-family: 'ElenaWeb', Georgia, 'Times New Roman', Times, serif; font-weight: normal; line-height: 26px;" class="fallback-georgia">
+                  Add more paragraphs as needed. Remember to maintain consistent styling throughout your email.
+                </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Bullet Points Module -->
+        <table class="mktoModule" id="bulletModule" mktoName="Bullet Points Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <td style="padding: 10px 44px 20px 44px;" class="p-left44 p-right44">
+              <div class="mktoText" id="bulletText" mktoName="Bullet Points">
+                <ul style="margin: 0; padding: 0 0 0 20px; color: #333333; font-size: 16px; font-family: 'ElenaWeb', Georgia, 'Times New Roman', Times, serif; line-height: 26px;" class="fallback-georgia">
+                  <li style="margin-bottom: 10px;">First bullet point item</li>
+                  <li style="margin-bottom: 10px;">Second bullet point item</li>
+                  <li style="margin-bottom: 0;">Third bullet point item</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Button Module -->
+        <table class="mktoModule" id="buttonModule" mktoName="Button Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="${colorBgDefaultWhite}" style="margin: 0 auto;">
+          <tr>
+            <td align="${posButton}" style="padding: 20px 44px 30px 44px;" class="p-left44 p-right44">
+              <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${linkButton}" style="height:44px;v-text-anchor:middle;width:200px;" arcsize="5%" strokecolor="#00a0af" fillcolor="#00a0af">
+                <w:anchorlock/>
+                <center style="color:#ffffff;font-family:Calibri,sans-serif;font-size:16px;font-weight:bold;">${textButton}</center>
+              </v:roundrect>
+              <![endif]-->
+              <!--[if !mso]><!-->
+              <a href="${linkButton}" style="display: inline-block; padding: 12px 30px; background-color: #00a0af; color: #ffffff; font-size: 16px; font-family: 'SeravekWeb', Calibri, Carlito, 'PT Sans', 'Trebuchet MS', sans-serif; font-weight: bold; text-decoration: none; border-radius: 3px; text-align: center;" class="fallback-calibri" target="_blank">${textButton}</a>
+              <!--<![endif]-->
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Video Thumbnail Module -->
+        <table class="mktoModule" id="videoModule" mktoName="Video Thumbnail Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <td align="center" style="padding: 20px 44px;" class="p-left44 p-right44">
+              <a href="${linkVideo}" target="_blank">
+                <div class="mktoImg" id="videoThumbnail" mktoName="Video Thumbnail" mktoImgWidth="512">
+                  <img src="https://engage.transporeon.com/rs/307-ROC-257/images/video-placeholder.jpg" alt="Watch Video" border="0" width="512" style="display: block; width: 70%; max-width: 512px;" />
+                </div>
+              </a>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Signature Module -->
+        <table class="mktoModule" id="signatureModule" mktoName="Signature Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#ffffff" style="margin: 0 auto;">
+          <tr>
+            <td style="padding: 20px 44px 30px 44px;" class="p-left44 p-right44">
+              <div class="mktoText" id="signatureText" mktoName="Signature">
+                <p style="margin: 0; color: #333333; font-size: 16px; font-family: 'ElenaWeb', Georgia, 'Times New Roman', Times, serif; font-weight: normal; line-height: 26px;" class="fallback-georgia">
+                  Best regards,<br />
+                  The Transporeon Team
+                </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        
+        <!-- Footer Module -->
+        <table class="mktoModule" id="footerModule" mktoName="Footer Module" width="600" border="0" cellspacing="0" cellpadding="0" class="deviceWidth" bgcolor="#1a1a2e" style="margin: 0 auto;">
+          <tr>
+            <td style="padding: 30px 44px;" class="p-left44 p-right44">
+              <!-- Social Media Icons -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" style="padding-bottom: 20px;">
+                    <a href="https://www.linkedin.com/company/transporeon/" target="_blank" style="display: inline-block; margin: 0 5px;">
+                      <img src="https://engage.transporeon.com/rs/307-ROC-257/images/icon-linkedin.png" alt="LinkedIn" width="32" height="32" border="0" />
+                    </a>
+                    <a href="https://twitter.com/TRANSPOREON_" target="_blank" style="display: inline-block; margin: 0 5px;">
+                      <img src="https://engage.transporeon.com/rs/307-ROC-257/images/icon-twitter.png" alt="Twitter" width="32" height="32" border="0" />
+                    </a>
+                    <a href="https://www.youtube.com/user/Transporeon" target="_blank" style="display: inline-block; margin: 0 5px;">
+                      <img src="https://engage.transporeon.com/rs/307-ROC-257/images/icon-youtube.png" alt="YouTube" width="32" height="32" border="0" />
+                    </a>
+                    <a href="https://www.facebook.com/Transporeon" target="_blank" style="display: inline-block; margin: 0 5px;">
+                      <img src="https://engage.transporeon.com/rs/307-ROC-257/images/icon-facebook.png" alt="Facebook" width="32" height="32" border="0" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- Footer Text -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" style="padding-bottom: 15px;">
+                    <p style="margin: 0; color: #ffffff; font-size: 12px; font-family: 'SeravekWeb', Calibri, Carlito, 'PT Sans', 'Trebuchet MS', sans-serif; line-height: 18px;" class="fallback-calibri">
+                      Transporeon GmbH | Graf-Zeppelin-Platz 1 | 89079 Ulm | Germany
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <!-- FIXED: Changed hardcoded URL to Marketo token -->
+                    <a href="{{system.unsubscribeLink}}" style="color: #ffffff; font-size: 12px; font-family: 'SeravekWeb', Calibri, Carlito, 'PT Sans', 'Trebuchet MS', sans-serif; font-weight: bold; text-decoration: underline;" class="fallback-calibri" target="_blank">Unsubscribe</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
