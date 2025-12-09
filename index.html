@@ -28,7 +28,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, var(--transporeon-blue) 0%, var(--transporeon-blue-dark) 100%);
+            background: var(--transporeon-white);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -38,7 +38,7 @@
             position: relative;
         }
 
-        /* Animated background elements */
+        /* Subtle background pattern */
         .bg-pattern {
             position: absolute;
             top: 0;
@@ -47,7 +47,7 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
-            opacity: 0.1;
+            opacity: 0.03;
         }
 
         .bg-pattern::before {
@@ -61,8 +61,8 @@
                 45deg,
                 transparent,
                 transparent 30px,
-                rgba(255, 255, 255, 0.03) 30px,
-                rgba(255, 255, 255, 0.03) 60px
+                var(--transporeon-blue) 30px,
+                var(--transporeon-blue) 60px
             );
             animation: patternMove 20s linear infinite;
         }
@@ -79,7 +79,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--transporeon-blue) 0%, var(--transporeon-blue-dark) 100%);
+            background: var(--transporeon-white);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -109,8 +109,8 @@
         .loader::before {
             width: 100%;
             height: 100%;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            border-top-color: var(--transporeon-white);
+            border: 4px solid var(--transporeon-gray-light);
+            border-top-color: var(--transporeon-blue);
             animation: spin 1s linear infinite;
         }
 
@@ -119,7 +119,7 @@
             height: 30px;
             top: 15px;
             left: 15px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
+            border: 3px solid var(--transporeon-gray-light);
             border-top-color: var(--transporeon-orange);
             animation: spin 0.6s linear infinite reverse;
         }
@@ -129,12 +129,11 @@
         }
 
         .loading-text {
-            color: var(--transporeon-white);
+            color: var(--transporeon-gray);
             margin-top: 24px;
             font-size: 14px;
             font-weight: 500;
             letter-spacing: 0.5px;
-            opacity: 0.9;
         }
 
         /* Main content */
@@ -154,8 +153,8 @@
             animation: fadeInDown 0.8s ease 0.3s forwards;
         }
 
-        .logo svg {
-            width: 220px;
+        .logo img {
+            max-width: 220px;
             height: auto;
         }
 
@@ -163,7 +162,8 @@
             background: var(--transporeon-white);
             border-radius: 16px;
             padding: 48px 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--transporeon-gray-light);
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease 0.5s forwards;
@@ -285,19 +285,19 @@
         .footer {
             position: absolute;
             bottom: 24px;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--transporeon-gray);
             font-size: 12px;
             z-index: 1;
         }
 
         .footer a {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--transporeon-blue);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            color: var(--transporeon-white);
+            color: var(--transporeon-blue-dark);
         }
 
         /* Responsive */
@@ -310,8 +310,8 @@
                 font-size: 24px;
             }
 
-            .logo svg {
-                width: 180px;
+            .logo img {
+                max-width: 180px;
             }
 
             .checkmark-circle {
@@ -340,11 +340,8 @@
     <div class="container">
         <!-- Transporeon Logo -->
         <div class="logo">
-            <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="32" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">
-                    TRANSPOREON
-                </text>
-            </svg>
+            <!-- Replace src with your Transporeon logo file -->
+            <img src="transporeon-logo.png" alt="Transporeon" onerror="this.outerHTML='<svg viewBox=\'0 0 200 40\' xmlns=\'http://www.w3.org/2000/svg\'><text x=\'0\' y=\'32\' font-family=\'Inter, Arial, sans-serif\' font-size=\'28\' font-weight=\'700\' fill=\'#0046AD\'>TRANSPOREON</text></svg>'">
         </div>
 
         <!-- Thank You Card -->
