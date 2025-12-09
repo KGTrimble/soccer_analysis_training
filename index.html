@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Transporeon</title>
+    <link rel="icon" type="image/png" href="https://engage.transporeon.com/rs/307-ROC-257/images/Transporeon_flag.png?version=0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --transporeon-blue: #0046AD;
+            --transporeon-blue-dark: #003380;
+            --transporeon-blue-light: #E6F0FF;
+            --transporeon-orange: #FF6B00;
+            --transporeon-gray: #6B7280;
+            --transporeon-gray-light: #F3F4F6;
+            --transporeon-white: #FFFFFF;
+            --transporeon-black: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--transporeon-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle background pattern */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.03;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 30px,
+                var(--transporeon-blue) 30px,
+                var(--transporeon-blue) 60px
+            );
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        /* Loading screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--transporeon-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .loader::before {
+            width: 100%;
+            height: 100%;
+            border: 4px solid var(--transporeon-gray-light);
+            border-top-color: var(--transporeon-blue);
+            animation: spin 1s linear infinite;
+        }
+
+        .loader::after {
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            left: 15px;
+            border: 3px solid var(--transporeon-gray-light);
+            border-top-color: var(--transporeon-orange);
+            animation: spin 0.6s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--transporeon-gray);
+            margin-top: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main content */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .logo {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 0.8s ease 0.3s forwards;
+        }
+
+        .logo img {
+            max-width: 250px;
+            height: auto;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        .card {
+            background: var(--transporeon-white);
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--transporeon-gray-light);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        .checkmark-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .checkmark {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: drawCheck 0.6s ease 1s forwards;
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .thank-you-title {
+            color: var(--transporeon-black);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .thank-you-message {
+            color: var(--transporeon-gray);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .redirect-info {
+            background: var(--transporeon-blue-light);
+            border-radius: 8px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .redirect-icon {
+            width: 20px;
+            height: 20px;
+            stroke: var(--transporeon-blue);
+            animation: pulse 1.5s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+
+        .redirect-text {
+            color: var(--transporeon-blue);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .countdown {
+            font-weight: 700;
+            color: var(--transporeon-blue-dark);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 70, 173, 0.2);
+            border-radius: 2px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--transporeon-blue) 0%, var(--transporeon-orange) 100%);
+            border-radius: 2px;
+            width: 0%;
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            to { width: 100%; }
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 24px;
+            color: var(--transporeon-gray);
+            font-size: 12px;
+            z-index: 1;
+        }
+
+        .footer a {
+            color: var(--transporeon-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--transporeon-blue-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .card {
+                padding: 32px 24px;
+            }
+
+            .thank-you-title {
+                font-size: 24px;
+            }
+
+            .logo img {
+                max-width: 180px;
+            }
+
+            .checkmark-circle {
+                width: 64px;
+                height: 64px;
+            }
+
+            .checkmark {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+
+    <!-- Background Pattern -->
+    <div class="bg-pattern"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- ============================================== -->
+        <!-- LOGO PLACEHOLDER - ADD YOUR IMAGE URL BELOW   -->
+        <!-- ============================================== -->
+        <div class="logo">
+            <img src="YOUR_LOGO_URL_HERE" alt="Transporeon">
+        </div>
+        <!-- ============================================== -->
+
+        <!-- Thank You Card -->
+        <div class="card">
+            <div class="checkmark-circle">
+                <svg class="checkmark" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h1 class="thank-you-title">Thank You!</h1>
+            
+            <p class="thank-you-message">
+                We appreciate your time and interest. Your submission has been received successfully. 
+                We're excited to help you optimize your logistics operations.
+            </p>
+
+            <div class="redirect-info">
+                <svg class="redirect-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span class="redirect-text">
+                    Redirecting to Transporeon in <span class="countdown" id="countdown">5</span> seconds
+                </span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 <a href="https://www.transporeon.com" target="_blank">Transporeon</a>. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Loading screen handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen after content is ready
+            setTimeout(function() {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Countdown and redirect
+        (function() {
+            let seconds = 5;
+            const countdownEl = document.getElementById('countdown');
+            
+            const timer = setInterval(function() {
+                seconds--;
+                if (countdownEl) {
+                    countdownEl.textContent = seconds;
+                }
+                
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'https://www.transporeon.com/en';
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
